@@ -1,0 +1,47 @@
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.navbar .logo {
+  border-radius: 90%;
+  width: 90px;
+  height: 90px;
+  margin-left: 10px;
+}
+
+.custom-button {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
