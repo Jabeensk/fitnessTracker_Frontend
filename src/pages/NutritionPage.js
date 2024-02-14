@@ -48,7 +48,7 @@ const NutritionPage = ({user}) => {
   };
 const handleSubmit=async(e)=> {
   e.preventDefault();
-  const res=await axios.post('http://localhost:4000/api/food-diary', {
+  const res=await axios.post('https://fitnesstracker-backend2.onrender.com/api/food-diary', {
 userId: user._id, 
 ...meals
   })

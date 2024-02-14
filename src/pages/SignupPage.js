@@ -14,7 +14,7 @@ const SignupPage = ({ setUser }) => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4000/api/users", {
+      const res = await axios.post("https://fitnesstracker-backend2.onrender.com/api/users", {
         firstName,
         lastName,
         email,

@@ -26,7 +26,7 @@ const ProfilePage = ({user}) => {
     // Fetch food diary data
     const fetchFoodDiary = async () => {
       try {
-        const foodDiaryResponse = await axios.get(`http://localhost:4000/api/food-diary/${user._id}`);
+        const foodDiaryResponse = await axios.get(`https://fitnesstracker-backend2.onrender.com/api/food-diary/${user._id}`);
         console.log(foodDiaryResponse.data);
         setFoodDiary(foodDiaryResponse.data);
       } catch (error) {
