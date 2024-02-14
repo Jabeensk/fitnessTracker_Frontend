@@ -67,6 +67,14 @@ function Nav({ handleLogout }) {
         />
         <Link to="/nutrition">Nutrition</Link>
 
+        <img
+          src={logo}
+          alt="Nutrition"
+          style={{ marginRight: "20px", height: "60px", width: "50px" }}
+         
+        />
+        <Link to="/about">About</Link>
+
         <button onClick={logout} className="custom-button">
           Logout
         </button>

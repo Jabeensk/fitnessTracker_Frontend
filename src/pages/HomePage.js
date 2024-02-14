@@ -35,6 +35,16 @@ function HomePage({ setUser }) {
         </div>
       </nav>
 
+      <div className="welcome-content">
+        <h2>Welcome!</h2>
+        <p>
+          My Burn Buddy helps you track your workouts, calories burned and nutrition to achieve your fitness goals.
+        </p>
+        
+
+      </div>
+
+
       <h3>Login</h3>
       <form onSubmit={handleLogin}>
         <label htmlFor="email">Email:</label>
