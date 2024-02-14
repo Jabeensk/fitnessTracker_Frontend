@@ -1,29 +1,40 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import SignupPage from './pages/SignupPage';
-import Nav from './components/Nav';
-import WorkoutsPage from './pages/WorkoutsPage';
-import ProfilePage from './pages/ProfilePage';
-import NutritionPage from './pages/NutritionPage';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import SignupPage from "./pages/SignupPage";
+import Nav from "./components/Nav";
+import WorkoutsPage from "./pages/WorkoutsPage";
+import ProfilePage from "./pages/ProfilePage";
+import NutritionPage from "./pages/NutritionPage";
 
-
-import './styles.css'
-
-
+import "./styles.css";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [userId, setUserId] = useState(null);
+
+  const handleLogout = () => {
+   
+    setUser(null); // For example, set the user state to null
+  };
+
+  const handleLogin = (userId) => {
+    setUserId(userId);
+  };
+
   return (
     <Router>
       <div>
         {user ? (
           <>
-            <Nav />
+            <Nav handleLogout={handleLogout} />
             <Routes>
-              <Route path="/workouts" element={<WorkoutsPage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/nutrition" element={<NutritionPage />} />
+              <Route path="/workouts" element={<WorkoutsPage user={user} />} />
+              <Route path="/profile" element={<ProfilePage user={user} />} />
+              <Route
+                path="/nutrition"
+                element={<NutritionPage user={user} />}
+              />
             </Routes>
           </>
         ) : (

@@ -4,6 +4,7 @@ import logo from "../views/MBBlogo.jpg";
 import "../styles.css";
 
 import axios from "axios";
+import Nav from "../components/Nav";
 
 function HomePage({ setUser }) {
   const [email, setEmail] = useState("");
@@ -12,14 +13,15 @@ function HomePage({ setUser }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get("http://localhost:4000/api/users", {
+      const res = await axios.post("http://localhost:4000/api/users/signin", {
         email,
         password,
       });
       console.log(res.data);
       setUser(res.data);
-    } catch (error) {}
-    console.log("Logged In");
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (

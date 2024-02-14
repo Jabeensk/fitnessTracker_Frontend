@@ -11,7 +11,7 @@ const activityData = {
     if (!rate) {
       return 0; 
     }
-    const caloriesBurned = rate * (duration / 60); // Assuming duration is in minutes
+    const caloriesBurned = rate * (duration / 60); 
     return caloriesBurned;
   }
   

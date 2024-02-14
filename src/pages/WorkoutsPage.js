@@ -24,7 +24,7 @@ function WorkoutsPage() {
 
       console.log(response.data);
 
-      // reset the form after saving
+     
       setActivity("");
       setDuration("");
       setCaloriesBurned(0);
@@ -36,24 +36,31 @@ function WorkoutsPage() {
     }
   };
 
+  const activityOptions = [
+    "Running",
+    "Walking",
+    "Cycling",
+    "Swimming",
+    
+  ];
+
+
   return (
     <div>
-      <nav className="navbar navbar-dark bg-primary">
-        <div className="container-fluid">
-          <img src={logo} alt="Logo" className="logo" />
-          <span className="navbar-brand mb-0 h1">
-            <h1>My Burn Buddy</h1>
-          </span>
-        </div>
-      </nav>
-      <h1>Workouts Page</h1>
+      <h1>Workouts</h1>
       <div>
         <label>Activity:</label>
-        <input
-          type="text"
+        <select
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
-        />
+        >
+          <option value="">Select an activity</option>
+          {activityOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
       </div>
       <div>
         <label>Duration (in minutes):</label>
@@ -66,12 +73,18 @@ function WorkoutsPage() {
       <button onClick={handleCalculate} className="custom-button">
         Calculate Calories
       </button>
-      <div>
-        <p>Calories Burned: {caloriesBurned}</p>
+      
+      <div style={{ backgroundColor: "orange", padding: "10px", borderRadius: "5px", marginTop: "10px" }}>
+        <p style={{ fontSize: "24px", fontWeight: "bold", color: "black" }}>
+          Calories Burned: {caloriesBurned}
+        </p>
       </div>
-      <button onClick={handleSaveWorkout} className="custom-button">
+      
+      
+      
+      {/* <button type="submit" className="custom-button">
         Save Workout
-      </button>
+      </button> */}
     </div>
   );
 }

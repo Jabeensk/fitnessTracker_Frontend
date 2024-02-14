@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: navy;
   color: white;
   display: flex;
   justify-content: center;
@@ -45,3 +45,4 @@ body {
 .custom-button:hover {
   background-color: #0056b3;
 }
+

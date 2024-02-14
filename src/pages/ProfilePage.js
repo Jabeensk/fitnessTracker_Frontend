@@ -1,57 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import axios from 'axios';
-import logo from '../views/MBBlogo.jpg';
-import '../styles.css';
-import NutritionPage from './NutritionPage';
+import axios from "axios";
+import logo from "../views/MBBlogo.jpg";
+import "../styles.css";
+import NutritionPage from "./NutritionPage";
 
-const ProfilePage = () => {
+const ProfilePage = ({user}) => {
   const [userInfo, setUserInfo] = useState(null);
   const [foodDiary, setFoodDiary] = useState([]);
+  const [workouts, setWorkouts] = useState([]);
+
 
   useEffect(() => {
     // Fetch user data
     const fetchUserData = async () => {
       try {
-        const userDataResponse = await axios.get(`/api/food-diary/${userId}`); 
-        setFoodDiary(foodDiaryResponse.data);
+        const userDataResponse = await axios.get(`http://localhost:4000/api/food-diary/${user._id}`);
+        setUserInfo(userDataResponse.data);
+        console.log(userDataResponse);
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error("Error fetching user data:", error);
       }
     };
 
     // Fetch food diary data
     const fetchFoodDiary = async () => {
       try {
-        const foodDiaryResponse = await axios.get(`/api/food-diary/${userId}`);
- 
+        const foodDiaryResponse = await axios.get(`http://localhost:4000/api/food-diary/${user._id}`);
+        console.log(foodDiaryResponse.data);
         setFoodDiary(foodDiaryResponse.data);
       } catch (error) {
-        console.error('Error fetching food diary:', error);
+        console.error("Error fetching food diary:", error);
       }
     };
+console.log(foodDiary);
+console.log(userInfo);
 
-    // Fetch both user data and food diary data
     fetchUserData();
     fetchFoodDiary();
   }, []);
 
   return (
     <div>
-      <nav className="navbar navbar-dark bg-primary">
-        <div className="container-fluid">
-        <img src={logo} alt="Logo" className="logo" /> 
-          <span className="navbar-brand mb-0 h1"><h1>My Burn Buddy</h1></span>
-        
-        </div>
-      </nav>
-      <h2>Profile Page</h2>
-      {userInfo && (
+      <h3>Profile</h3>
+      {user && (
         <div>
-          <p>First Name: {userInfo.firstName}</p>
-          <p>Last Name: {userInfo.lastName}</p>
-          <p>Email: {userInfo.email}</p>
-          <p>Date of Birth: {userInfo.dateOfBirth}</p>
+          <p>First Name: {user.firstName}</p>
+          <p>Last Name: {user.lastName}</p>
+          <p>Email: {user.email}</p>
+          <p>Date of Birth: {user.dateOfBirth}</p>
         </div>
       )}
 
@@ -59,12 +56,17 @@ const ProfilePage = () => {
       <ul>
         {foodDiary.map((entry, index) => (
           <li key={index}>
-            <p>Food: {entry.food}</p>
-            <p>Calories: {entry.calories}</p>
-            <p>Date: {entry.date}</p>
+            <p>Water: {entry.waterIntake}</p>
+            <p>Breakfast: {entry.breakfast}</p>
+            <p>Lunch: {entry.lunch}</p>
+            <p>Dinner: {entry.dinner}</p>
+            <p>Snacks: {entry.snacks}</p>
           </li>
         ))}
       </ul>
+
+      
+
     </div>
   );
 };
