@@ -1,4 +1,4 @@
-# My Burn Buddy
+t# My Burn Buddy
 
 My Burn Buddy is a fitness application built using the MERN stack (MongoDB, Express, React, and Node.js) that helps users calculate caloried burned after workouts, manage their nutrition, and achieve their fitness goals.
 Goto backend for this project here: https://github.com/Jabeensk/FitnessTracker_Backend2
@@ -37,7 +37,7 @@ Guide to code my calculator
 https://www2.lawrence.edu/fast/GREGGJ/CMSC106/lectures/Chapter4/Exercise/Calculator.html
 
 ## Future Updates
-Working on nutrion log to calculate total calories
+Working on nutrition log to calculate total calories
 
 ## License
 
