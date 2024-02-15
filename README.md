@@ -28,6 +28,7 @@ Once the application is running, users can:
 - Node.js
 
 ## References
+Nutrition API:  https://api-ninjas.com/api/nutrition
 Guide to code my calculator
 https://www2.lawrence.edu/fast/GREGGJ/CMSC106/lectures/Chapter4/Exercise/Calculator.html
 
