@@ -10,6 +10,10 @@ My Burn Buddy allows users to track their workouts, monitor their nutrition inta
 
 npm install
 
+# Deployment
+https://fitnesstracker-backend2.onrender.com
+https://myburnbuddy.netlify.app/
+
 ## Usage
 
 Once the application is running, users can:
@@ -31,6 +35,9 @@ Once the application is running, users can:
 Nutrition API:  https://api-ninjas.com/api/nutrition
 Guide to code my calculator
 https://www2.lawrence.edu/fast/GREGGJ/CMSC106/lectures/Chapter4/Exercise/Calculator.html
+
+#Future Updates
+Working on nutrion log to calculate total calories
 
 ## License
 
