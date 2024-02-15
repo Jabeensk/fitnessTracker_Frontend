@@ -11,8 +11,8 @@ My Burn Buddy allows users to track their workouts, monitor their nutrition inta
 npm install
 
 ## Deployment
-https://fitnesstracker-backend2.onrender.com
-https://myburnbuddy.netlify.app/
+Backend  https://fitnesstracker-backend2.onrender.com
+Frontend  https://myburnbuddy.netlify.app/
 
 ## Usage
 
