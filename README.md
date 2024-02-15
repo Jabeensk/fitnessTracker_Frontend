@@ -38,6 +38,8 @@ https://www2.lawrence.edu/fast/GREGGJ/CMSC106/lectures/Chapter4/Exercise/Calcula
 
 ## Future Updates
 Working on nutrition log to calculate total calories
+Save workouts
+blog 
 
 ## License
 
